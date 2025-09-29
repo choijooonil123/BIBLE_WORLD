@@ -1,22 +1,35 @@
 <!doctype html>
 <html lang="ko">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="theme-color" content="#10183a" />
-<link rel="manifest" href="/manifest.webmanifest" />
-<link rel="icon" href="/public/icons/icon-192.png" type="image/png" />
-<title>BIBLE_WORLD</title>
-</head>
-<body>
-<div id="root"></div>
-<script type="module" src="/src/main.tsx"></script>
-<script>
-if ('serviceWorker' in navigator) {
-window.addEventListener('load', () => {
-navigator.serviceWorker.register('/sw.js');
-});
-}
-</script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#10183a" />
+
+    <!-- PWA 매니페스트 -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <!-- 아이콘 -->
+    <link rel="icon" href="/icons/icon-192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/icons/icon-512.png" />
+
+    <title>BIBLE_WORLD</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- React 진입점 -->
+    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- 서비스워커 등록 -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/sw.js").then(
+            (reg) => console.log("Service Worker registered", reg),
+            (err) => console.warn("SW registration failed", err)
+          );
+        });
+      }
+    </script>
+  </body>
 </html>
