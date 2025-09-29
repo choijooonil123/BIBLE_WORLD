@@ -1,0 +1,14 @@
+{
+"name": "BIBLE_WORLD",
+"short_name": "BIBLE_WORLD",
+"lang": "ko-KR",
+"start_url": "/",
+"display": "standalone",
+"background_color": "#0b1020",
+"theme_color": "#10183a",
+"icons": [
+{ "src": "/public/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+{ "src": "/public/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+{ "src": "/public/icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+]
+}
